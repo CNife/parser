@@ -67,6 +67,8 @@ var supportedCollationNames = map[string]struct{}{
 	CollationASCII:   {},
 	CollationLatin1:  {},
 	CollationBin:     {},
+	"utf8_bin":       {},
+	"utf8mb4_bin":    {},
 }
 
 // Desc is a charset description.
@@ -185,11 +187,11 @@ const (
 	// CharsetUTF8 is the default charset for string types.
 	CharsetUTF8 = "utf8"
 	// CollationUTF8 is the default collation for CharsetUTF8.
-	CollationUTF8 = "utf8_bin"
+	CollationUTF8 = "utf8_unicode_ci"
 	// CharsetUTF8MB4 represents 4 bytes utf8, which works the same way as utf8 in Go.
 	CharsetUTF8MB4 = "utf8mb4"
 	// CollationUTF8MB4 is the default collation for CharsetUTF8MB4.
-	CollationUTF8MB4 = "utf8mb4_bin"
+	CollationUTF8MB4 = "utf8mb4_unicode_ci"
 	// CharsetASCII is a subset of UTF8.
 	CharsetASCII = "ascii"
 	// CollationASCII is the default collation for CharsetACSII.
@@ -245,7 +247,7 @@ var collations = []*Collation{
 	{43, "macce", "macce_bin", false},
 	{44, "cp1250", "cp1250_croatian_ci", false},
 	{45, "utf8mb4", "utf8mb4_general_ci", false},
-	{46, "utf8mb4", "utf8mb4_bin", true},
+	{46, "utf8mb4", "utf8mb4_bin", false},
 	{47, "latin1", "latin1_bin", true},
 	{48, "latin1", "latin1_general_ci", false},
 	{49, "latin1", "latin1_general_cs", false},
@@ -281,7 +283,7 @@ var collations = []*Collation{
 	{80, "cp850", "cp850_bin", false},
 	{81, "cp852", "cp852_bin", false},
 	{82, "swe7", "swe7_bin", false},
-	{83, "utf8", "utf8_bin", true},
+	{83, "utf8", "utf8_bin", false},
 	{84, "big5", "big5_bin", false},
 	{85, "euckr", "euckr_bin", false},
 	{86, "gb2312", "gb2312_bin", false},
@@ -371,7 +373,7 @@ var collations = []*Collation{
 	{181, "utf32", "utf32_croatian_ci", false},
 	{182, "utf32", "utf32_unicode_520_ci", false},
 	{183, "utf32", "utf32_vietnamese_ci", false},
-	{192, "utf8", "utf8_unicode_ci", false},
+	{192, "utf8", "utf8_unicode_ci", true},
 	{193, "utf8", "utf8_icelandic_ci", false},
 	{194, "utf8", "utf8_latvian_ci", false},
 	{195, "utf8", "utf8_romanian_ci", false},
@@ -396,7 +398,7 @@ var collations = []*Collation{
 	{214, "utf8", "utf8_unicode_520_ci", false},
 	{215, "utf8", "utf8_vietnamese_ci", false},
 	{223, "utf8", "utf8_general_mysql500_ci", false},
-	{224, "utf8mb4", "utf8mb4_unicode_ci", false},
+	{224, "utf8mb4", "utf8mb4_unicode_ci", true},
 	{225, "utf8mb4", "utf8mb4_icelandic_ci", false},
 	{226, "utf8mb4", "utf8mb4_latvian_ci", false},
 	{227, "utf8mb4", "utf8mb4_romanian_ci", false},

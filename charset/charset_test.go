@@ -82,9 +82,9 @@ func (s *testCharsetSuite) TestGetDefaultCollation(c *C) {
 		co   string
 		succ bool
 	}{
-		{"utf8", "utf8_bin", true},
-		{"UTF8", "utf8_bin", true},
-		{"utf8mb4", "utf8mb4_bin", true},
+		{"utf8", "utf8_unicode_ci", true},
+		{"UTF8", "utf8_unicode_ci", true},
+		{"utf8mb4", "utf8mb4_unicode_ci", true},
 		{"ascii", "ascii_bin", true},
 		{"binary", "binary", true},
 		{"latin1", "latin1_bin", true},
